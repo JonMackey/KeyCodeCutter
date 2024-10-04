@@ -50,8 +50,8 @@ static const char kKMSettingsPath[] = "KMSettings.txt";
 *	dynamically changes would have to be made to create XMenuItems dynamically.
 *	In addition, support for scrolling would have to be added to XMenu.
 */
-SKeySpec	schlageKeySpec = {"Schlage", 0.83909963117, 0.015, 0.200, 0.343, 0.031, 0.1562, 0.231, 7, 0, 9, false, true, kSchlageSC1MenuItem, SKeySpec::e5PinMask};
-SKeySpec	kwiksetKeySpec = {"Kwikset", 1, 0.023, 0.191, 0.335, 0.084, 0.150, 0.247, 4, 1, 7, false, true, kKwiksetKW1MenuItem, SKeySpec::e6PinMask | SKeySpec::e4PinMask};
+SKeySpec	schlageKeySpec = {"Schlage", 0.83909963117, 0.015, 0.200, 0.343, 0.031, 0.1562, 0.231, 7, 0, 9, false, true, kSchlageSC1MenuItem, SKeySpec::e6PinMask | SKeySpec::e5PinMask};
+SKeySpec	kwiksetKeySpec = {"Kwikset", 1, 0.023, 0.191, 0.335, 0.084, 0.150, 0.247, 4, 1, 7, false, true, kKwiksetKW1MenuItem, SKeySpec::e6PinMask | SKeySpec::e5PinMask};
 
 /***************************** KeyMachineSTM32 *****************************/
 KeyMachineSTM32::KeyMachineSTM32(void)
