@@ -91,7 +91,7 @@ static const char kDeltaStr[] = "Delta";
 static const char kKeywayStr[] = "Keyway:";
 static const char kBowStr[] = "bow";
 static const char kTipStr[] = "tip";
-static const char kPinDepthStr[] = "PinDepth:";
+static const char kPinDepthStr[] = "Pin Depth:";
 static const char kMMStr[] = "mm";
 static const char kCutStr[] = "Cut";
 static const char kResetStr[] = "Reset";
@@ -117,7 +117,7 @@ static const char	kAlignmentInstMsg[] =
 									"will change to green when enough points\n"
 									"have been entered to save. When satisfied\n"
 									"with the alignment, press Enter to save.\n"
-									"Press Up to quit alignment at any time.";
+									"Press Cancel to quit alignment at any time.";
 
 
 static const uint16_t	kInfoViewTag = 300;
@@ -440,34 +440,34 @@ XMenu		keywayMenu(kKeywayMenuTag,
 				&UI20ptFont, &schlageMenuItem, nullptr, kDialogBGColor);
 
 // Cut key dialog
-XLabel		keywayLabel(0, kLabelYAdj, 83, 26,
+XLabel		keywayLabel(0, kLabelYAdj, 87, 26,
 				kKeywayLabelTag, nullptr, kKeywayStr,
 				&UI20ptFont, nullptr,
 				XFont::eBlack, kDialogBGColor, XFont::eAlignRight);
-XPopUpButton keywayPopUp(83+kSpaceBetween, 0, 145, 0,
+XPopUpButton keywayPopUp(87+kSpaceBetween, 0, 145, 0,
 				kKeywayPopUpTag, &keywayMenu, &keywayLabel,
 				&UI20ptFont,
 				XPopUpButton::eLargePopUpSize,
 				XFont::eWhite, kDialogBGColor);
-XPopUpButton pinCountPopUp(83+kSpaceBetween+145+kSpaceBetween, 0, 75, 0,
+XPopUpButton pinCountPopUp(87+kSpaceBetween+145+kSpaceBetween, 0, 75, 0,
 				kPinCountPopUpTag, &pinCountMenu, &keywayPopUp,
 				&UI20ptFont,
 				XPopUpButton::eLargePopUpSize,
 				XFont::eWhite, kDialogBGColor);
-XLabel		bowLabel(0, kLabelYAdj + kRowHeight, 83, 26,
+XLabel		bowLabel(0, kLabelYAdj + kRowHeight, 87, 26,
 				kBowLabelTag, &pinCountPopUp, kBowStr,
 				&UI20ptFont, nullptr,
 				XFont::eBlack, kDialogBGColor, XFont::eAlignRight);
-XLabel		tipLabel(83+kSpaceBetween+145+kSpaceBetween, kLabelYAdj + kRowHeight, 37, 26,
+XLabel		tipLabel(87+kSpaceBetween+145+kSpaceBetween, kLabelYAdj + kRowHeight, 37, 26,
 				kTipLabelTag, &bowLabel, kTipStr,
 				&UI20ptFont, nullptr,
 				XFont::eBlack, kDialogBGColor, XFont::eAlignLeft);
 KMPinsValueField pinsValueField(0, kRowHeight, 0,
 				kPinsValueFieldTag, &tipLabel,
 				&UI20ptFont, XFont::eBlack, kDialogBGColor);
-XStepper	pinsValueStepper(223, kRowHeight, 0, 0,
+XStepper	pinsValueStepper(227, kRowHeight, 0, 0,
 				kPinsValueStepperTag, &pinsValueField);
-XLabel		pinDepthLabel(0, kLabelYAdj + (kRowHeight*2), 83, 26,
+XLabel		pinDepthLabel(0, kLabelYAdj + (kRowHeight*2), 87, 26,
 				kPinDepthLabelTag, &pinsValueStepper, kPinDepthStr,
 				&UI20ptFont, nullptr,
 				XFont::eBlack, kDialogBGColor, XFont::eAlignRight);
@@ -476,9 +476,9 @@ XNumberValueField pinDepthValueField(0, 0, 40,
 				&UI20ptFont, 0, 8500, 0, 1, false, false,
 				&ValueFormatter::Decimal22ToString,
 				0xFB00, kDialogBGColor);
-XStepper	pinValueStepper(130, kRowHeight*2, 0, 0,
+XStepper	pinValueStepper(134, kRowHeight*2, 0, 0,
 				kPinValueStepperTag, &pinDepthValueField);
-XLabel		mmLabel(155, kLabelYAdj + (kRowHeight*2), 34, 26,
+XLabel		mmLabel(159, kLabelYAdj + (kRowHeight*2), 34, 26,
 				kMMLabelTag, &pinValueStepper, kMMStr,
 				&UI20ptFont, nullptr,
 				XFont::eBlack, kDialogBGColor, XFont::eAlignRight);
