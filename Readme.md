@@ -59,5 +59,7 @@ Stepper movements and motor control are performed using subclasses of KMAction. 
 ### STM32UnixRTC
 STM32UnixRTC is a subclass of my UnixTime class.  STM32UnixRTC calls functions within rtc.c provided by STMicroelectronics.  I commented out the code within RTC\_init of rtc.c that truncates the 32-bit time storage within the mcu to only the number of seconds past midnight.  The STM32UnixRTC code needs the actual seconds, all 32 bits.  STM32UnixRTC does not use the STM time and date structs RTC\_TimeTypeDef, and RTC_DateTypeDef.  Instead STM32UnixRTC has its own version of ReadRTCCount and WriteRTCCount that accesses the time addresses directly.  This allows you to set and get the time as a 32-bit value and not have to pack and unpack the tedious DOS-like date and time structs.
 
-I will add a link to the associated Instructable once it's published.
-The instructable will contain links to where the bare PCB can be purchased.
+See my 
+[Key Code Cutter](https://www.instructables.com/Key-Code-Cutter/) instructable for more information.
+
+The instructable contains links to where the bare PCB can be purchased.
